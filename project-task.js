@@ -44,30 +44,30 @@ but it contains multiple syntax errors that prevent it from being parsed.
 // 🔍 Provided JSON File with Errors
 // ============================================
 
-const invalidBookingJSON = `
+//const invalidBookingJSON = ` variables and tick marks are not valid data type in JSON
 {
   "hotelName": "Grand City Hotel",
-  "checkInDate": "2024-05-15"
-  "checkOutDate": "2024-05-20",
+  "checkInDate": "2024-05-15", // missing comma must be present in JSON
+  "checkOutDate": "2024-05-20", 
   "guests": [
     {
-      name: "Alice Johnson",
+      "name": "Alice Johnson", // missing double quotation marks around name must be present in JSON
       "age": 30,
       "email": "alice.johnson@example.com"
     },
     {
       "name": "Bob Smith",
-      "age": undefined,
+      "age": undefined,  // undefined is an unsupported data type for JSON
       "email": "bob.smith@example"
     }
   ],
   "roomDetails": {
     "type": "Suite",
     "pricePerNight": 200,
-    "amenities": ["WiFi", "Breakfast", "Parking",]
+    "amenities": ["WiFi", "Breakfast", "Parking"]  //trailing comma after last item in array data types not valid in JSON
   }
 }
-`;
+// `; the tick mark and semicolon are not valid data types in JSON
 
 
 // ============================================
@@ -92,10 +92,18 @@ const invalidBookingJSON = `
 
 1️⃣ What tools or techniques did you use to identify the errors?
 
+I used a JSON formatter at jsonformatter.org to check for errors in the JSON code provided.
+
 2️⃣ How did you confirm that your corrected JSON file was valid?
+
+inputed corrected JSON code into a JSON formatter at jsonformatter.org.
 
 3️⃣ Which errors were the most difficult to spot? Why?
 
+The trailing comma at the end of the array because I did not notice it until close inspection.
+
 4️⃣ What strategies can help you avoid these kinds of errors in the future?
    (e.g., syntax highlighting, linters, writing JSON by example)
+
+   Using a linter to check my code will help me avoid these arrors in the future.
 */
